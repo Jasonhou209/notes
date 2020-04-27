@@ -24,31 +24,30 @@ type TreeNode struct {
 }
 
 func main() {
-	tree := new(TreeNode)
-	tree.Val = 3
-	tree.Left = new(TreeNode)
-	tree.Left.Val = 9
-	tree.Right = new(TreeNode)
-	tree.Right.Val = 20
-	tree.Right.Left = new(TreeNode)
-	tree.Right.Left.Val = 15
-	tree.Right.Right = new(TreeNode)
-	tree.Right.Right.Val = 7
+    tree := new(TreeNode)
+    tree.Val = 3
+    tree.Left = new(TreeNode)
+    tree.Left.Val = 9
+    tree.Right = new(TreeNode)
+    tree.Right.Val = 20
+    tree.Right.Left = new(TreeNode)
+    tree.Right.Left.Val = 15
+    tree.Right.Right = new(TreeNode)
+    tree.Right.Right.Val = 7
 
-	fmt.Print("depth: ", maxDepth(tree))
+    fmt.Print("depth: ", maxDepth(tree))
 }
 
 func maxDepth(root *TreeNode) int {
-
-	if root == nil {
-		return 0
-	} else {
-		leftTree := maxDepth(root.Left)
-		rightTree := maxDepth(root.Right)
-		if leftTree > rightTree {
-			return 1 + leftTree
-		} else {
-			return 1 + rightTree
-		}
-	}
+    if root == nil {
+        return 0
+    } else {
+        leftTree := maxDepth(root.Left)
+        rightTree := maxDepth(root.Right)
+        if leftTree > rightTree {
+            return 1 + leftTree
+        } else {
+            return 1 + rightTree
+        }
+    }
 }
