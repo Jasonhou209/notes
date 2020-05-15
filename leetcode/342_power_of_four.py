@@ -11,7 +11,13 @@
 """
 class Solution:
     def isPowerOfFour(self, num: int) -> bool:
-        return ((num >> 2) & 1) == 0
+        while True:
+            if num // 4 == 1 and num % 4 == 0:
+                return True
+            elif num // 4 == 1:
+                return False
+            else:
+                num //= 4
 
 def main():
     n1, n2 = 16, 5
